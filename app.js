@@ -43,16 +43,18 @@ const author = document.getElementById("author");
 const job = document.getElementById("job");
 const info = document.getElementById("info");
 
-//Prev and next buttons
+//Prev , next and random buttons
 const btns = document.querySelectorAll(".btn");
 
 let initialReview = 0;
 
+//Executed when the page loads
 window.addEventListener('DOMContentLoaded',function(){
   const reviewsArray = reviews[initialReview];
   getReviews(reviewsArray);
 });
 
+//Function which updates the review based on user interaction on screen.
 function getReviews(review) {
   img.setAttribute("src", review["img"]);
   author.textContent = review["name"];
@@ -60,6 +62,7 @@ function getReviews(review) {
   info.textContent = review["text"];  
 }
 
+//Adding event listener for each buttons : prev , next and random.
 btns.forEach(function (btn) {
     btn.addEventListener('click',function (e) {
     
